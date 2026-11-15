@@ -1,0 +1,158 @@
+{
+ "zone": {
+  "o2_pct": 30,
+  "pressure_psi": 10.2,
+  "source": "Challenge description: Moon base atmosphere expected at 30% O2 or more and 10.2 psi or less"
+ },
+ "presets": [
+  {
+   "id": "moon",
+   "label": "Moon base",
+   "environment": "lunar",
+   "gravity": "lunar",
+   "concern": "suppression",
+   "fuel": "any",
+   "oxygen_pct": 30,
+   "pressure_psi": 10.2,
+   "note": "Challenge reference atmosphere for a Moon base: 30% O2 or more at 10.2 psi or less."
+  },
+  {
+   "id": "iss",
+   "label": "ISS / spacecraft",
+   "environment": "spacecraft",
+   "gravity": "micro",
+   "concern": "prevention",
+   "fuel": "any",
+   "oxygen_pct": 21,
+   "pressure_psi": 14.7,
+   "note": "Assumed Earth-normal cabin air (21% O2 at 14.7 psi). Verify before citing."
+  },
+  {
+   "id": "rover",
+   "label": "Pressurized rover",
+   "environment": "rover",
+   "gravity": "lunar",
+   "concern": "detection",
+   "fuel": "any",
+   "oxygen_pct": 30,
+   "pressure_psi": 10.2,
+   "note": "Challenge text puts pressurized rovers in the same intermediate atmosphere as the Moon base. Gravity depends on where it drives."
+  },
+  {
+   "id": "suit",
+   "label": "Spacesuit boundary",
+   "environment": "lunar",
+   "gravity": "lunar",
+   "concern": "prevention",
+   "fuel": "any",
+   "oxygen_pct": 100,
+   "pressure_psi": 4.3,
+   "note": "Challenge text: spacesuits use 100% O2 at 4.3 psi. The extreme corner of the map."
+  }
+ ],
+ "timeline": [
+  {
+   "year": "1967",
+   "title": "Apollo 1",
+   "text": "A fire erupted during a pre-launch test in the oxygen-filled spacecraft and the crew died.",
+   "why": "Why oxygen concentration is the first variable on our map.",
+   "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+   "view": "simulator"
+  },
+  {
+   "year": "1970",
+   "title": "Apollo 13",
+   "text": "An oxygen tank exploded on the way to the Moon, endangering the crew.",
+   "why": "Oxygen systems are a fire and explosion risk, not only a breathing resource.",
+   "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13",
+   "view": "charts"
+  },
+  {
+   "year": "1997",
+   "title": "Fire aboard Mir",
+   "text": "An oxygen generator failure started a fire during joint operations that prepared for the International Space Station.",
+   "why": "Detection and suppression in a station: the questions SAME and FLEX study.",
+   "url": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/",
+   "view": "explorer"
+  },
+  {
+   "year": "Recent",
+   "title": "Artemis II smoke alarm",
+   "text": "Per the challenge text, the commander said a fire alarm gets your attention fast when you are about 80,000 miles from home.",
+   "why": "Fire detection still matters on every crewed mission.",
+   "url": "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/",
+   "view": "copilot"
+  },
+  {
+   "year": "Next",
+   "title": "Moon base atmospheres",
+   "text": "Planned habitats and pressurized rovers are expected at 30% O2 or more at lower pressure, which makes materials more flammable.",
+   "why": "The map shows how little test data sits in that zone.",
+   "url": "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/",
+   "view": "simulator"
+  }
+ ],
+ "earth": [
+  {
+   "title": "A fire detector that tells smoke from dust",
+   "era": "1970s",
+   "url": "https://spinoff.nasa.gov/node/9407",
+   "summary": "A smoke detector developed for the shuttle that discriminates between smoke and dust, so it gives fewer nuisance alarms. It has industrial uses, for example in mining.",
+   "connection": "SAME and SAME-R study smoke particles in microgravity, and DAFT reused one of their instruments for dust: the same smoke-versus-dust question.",
+   "links_to": [
+    "SAME",
+    "SAMER",
+    "DAFT"
+   ]
+  },
+  {
+   "title": "Firefighters' air tanks",
+   "era": "1970s",
+   "url": "https://spinoff.nasa.gov/node/9582",
+   "summary": "Spacesuit technology adapted to improve firefighters' air tanks and breathing gear.",
+   "connection": "Spacesuits run on 100% oxygen at 4.3 psi, the far corner of the oxygen and pressure map in this platform.",
+   "links_to": []
+  },
+  {
+   "title": "Fire attire",
+   "era": "1980s",
+   "url": "https://spinoff.nasa.gov/node/9918",
+   "summary": "Spacesuit technology applied to improve firefighter clothing.",
+   "connection": "BASS, BASS-II and Saffire burn fabrics and plastics: the material flammability evidence behind protective-clothing choices.",
+   "links_to": [
+    "BASS",
+    "BASSII",
+    "SAFFIRE1"
+   ]
+  },
+  {
+   "title": "Fine-water-mist extinguishers",
+   "era": "ISS era",
+   "url": "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/",
+   "summary": "The challenge text notes that fine-water-mist extinguishers developed for the ISS have practical applications on Earth.",
+   "connection": "Suppression evidence in FLEX and BASS shows how extinguishing agents behave without buoyancy.",
+   "links_to": [
+    "FLEX",
+    "BASS"
+   ]
+  }
+ ],
+ "resources": [
+  {
+   "label": "PSI Data Repository: Combustion Science",
+   "url": "https://psi.nasa.gov/physci/repo/search?q=combustion"
+  },
+  {
+   "label": "NASA Combustion Science",
+   "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+  },
+  {
+   "label": "A Researcher's Guide to ISS Combustion Science",
+   "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/"
+  },
+  {
+   "label": "ScienceCasts: The Power of Studying Combustion on the ISS",
+   "url": "https://www.youtube.com/watch?v=W1oXykoz9zg"
+  }
+ ]
+}

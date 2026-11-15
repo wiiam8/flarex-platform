@@ -1,0 +1,594 @@
+[
+ {
+  "id": "FLEX",
+  "psi": "PSI-69",
+  "doi": "10.60555/mbq8-0451",
+  "name": "Flame Extinguishment Experiment (FLEX)",
+  "family": "Droplet combustion",
+  "fuel_class": "liquid",
+  "hardware": "MDCA in CIR",
+  "direct": [
+   "suppression"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": "CO2 and helium dilution; N2 diluent",
+  "note": "Burning methanol and heptane droplets in O2/N2, O2/N2/CO2 and O2/N2/He atmospheres. Each test row gives pressure, composition, droplet size, extinction diameter and how the test ended.",
+  "limitation": "Liquid droplets only; not direct evidence for solid-material fires. Composition headers read O, N, CO and He; FLARE-X interprets them as O2, N2, CO2 and He (row sums 0.98 to 1.01 support this).",
+  "tables": [
+   "PSI-69_Experimental table_FLEX.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-69",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   },
+   {
+    "label": "NASA FLEX fact sheet",
+    "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf"
+   },
+   {
+    "label": "NASA/TP-2015-216046 (first 284 tests)",
+    "url": "https://ntrs.nasa.gov/citations/20150023456"
+   }
+  ]
+ },
+ {
+  "id": "FLEX2",
+  "psi": "PSI-68",
+  "doi": null,
+  "name": "Flame Extinguishment Experiment-2 (FLEX-2)",
+  "family": "Droplet combustion",
+  "fuel_class": "liquid",
+  "hardware": "MDCA in CIR",
+  "direct": [],
+  "indirect": [
+   "suppression"
+  ],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "The public table lists planned condition ranges: fuels, droplet sizes, O2/N2 or O2/He mixtures, oxygen 0.17 to 0.30, pressures 0.5 to 3.0 atm, flow 0.1 to 5 cm/s.",
+  "limitation": "Ranges, not measurements; no per-test outcomes are published in the table.",
+  "tables": [
+   "PSI-68_Experimental table_Flex2.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-68",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "CFI",
+  "psi": "PSI-39",
+  "doi": "10.60555/m6pj-a914",
+  "name": "Cool Flames Investigation (droplets)",
+  "family": "Droplet combustion",
+  "fuel_class": "liquid",
+  "hardware": "MDCA in CIR",
+  "direct": [],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Test-condition log: pressure, oxygen, nitrogen and helium fractions, fiber use and fuel (for example dodecane).",
+  "limitation": "Condition log only; the public table has no outcomes. Not the same investigation as CFI-G.",
+  "tables": [
+   "PSI-39_Experimental table_CFI.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-39",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "BASS",
+  "psi": "PSI-26",
+  "doi": "10.60555/58h4-dy80",
+  "name": "Burning and Suppression of Solids (BASS)",
+  "family": "Solid-material flammability",
+  "fuel_class": "solid",
+  "hardware": "MSG, SPICE flow duct",
+  "direct": [
+   "prevention",
+   "suppression"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": "Nitrogen flow (per NASA fact sheet)",
+  "note": "Test log of 122 runs listing date, test, sample number and fuel sample material (SIBAL fabric, PMMA, Nomex, Ultem and others).",
+  "limitation": "The public table has no oxygen or pressure; conditions sit in separate as-run matrices and videos.",
+  "tables": [
+   "PSI-26_Experimental table_BASS.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-26",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   },
+   {
+    "label": "NASA BASS fact sheet",
+    "url": "https://www.nasa.gov/wp-content/uploads/2025/07/burning-and-suppression-of-solids-bass.pdf"
+   }
+  ]
+ },
+ {
+  "id": "BASSII",
+  "psi": "PSI-25",
+  "doi": "10.60555/4qc4-de67",
+  "name": "Burning and Suppression of Solids II (BASS-II)",
+  "family": "Solid-material flammability",
+  "fuel_class": "solid",
+  "hardware": "MSG, SPICE flow duct",
+  "direct": [
+   "prevention",
+   "suppression"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "129 tests across six investigators with calibrated initial and final O2, CO2 and CO, air display and radiometer gain for solid samples such as PMMA films and rods.",
+  "limitation": "No pressure column; air display is a slow duct reading; no processed flame-spread table is published.",
+  "tables": [
+   "PSI-25_Experimental table_BASS-II.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-25",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   },
+   {
+    "label": "NASA BASS fact sheet",
+    "url": "https://www.nasa.gov/wp-content/uploads/2025/07/burning-and-suppression-of-solids-bass.pdf"
+   }
+  ]
+ },
+ {
+  "id": "SAFFIRE1",
+  "psi": "PSI-98",
+  "doi": "10.60555/0t15-1z43",
+  "name": "Spacecraft Fire Safety Demonstration I (Saffire-I)",
+  "family": "Solid-material flammability",
+  "fuel_class": "solid",
+  "hardware": null,
+  "direct": [
+   "prevention"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Large-scale SIBAL fabric samples with airflow, oxygen percentage, ignition power, burn time and flow direction.",
+  "limitation": "Four samples; oxygen is given approximately; some listed telemetry files may be unavailable.",
+  "tables": [
+   "PSI-98_Experimental table_SAFFIRE-1.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-98",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SAFFIRE2",
+  "psi": "PSI-99",
+  "doi": "10.60555/2chp-m469",
+  "name": "Spacecraft Fire Safety Demonstration II (Saffire-II)",
+  "family": "Solid-material flammability",
+  "fuel_class": "solid",
+  "hardware": null,
+  "direct": [
+   "prevention"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "15 material samples (for example silicone) with thickness, airflow, oxygen percentage, ignition power and burn outcomes.",
+  "limitation": "Spread-rate columns are normal-gravity values; microgravity columns are incomplete.",
+  "tables": [
+   "PSI-99_Experimental table_SAFFIRE-2.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-99",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SAFFIRE3",
+  "psi": "PSI-100",
+  "doi": "10.60555/040q-4h36",
+  "name": "Spacecraft Fire Safety Demonstration III (Saffire-III)",
+  "family": "Solid-material flammability",
+  "fuel_class": "solid",
+  "hardware": null,
+  "direct": [
+   "prevention"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Summary of two SIBAL fabric samples at 30 cm/s, one concurrent and one opposed flow; telemetry is published separately.",
+  "limitation": "The summary table has no oxygen or pressure.",
+  "tables": [
+   "PSI-100_Experimental table_SAFFIRE-3.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-100",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SAME",
+  "psi": "PSI-102",
+  "doi": "10.60555/gd4k-8h62",
+  "name": "Smoke and Aerosol Measurement Experiment (SAME)",
+  "family": "Smoke and detection",
+  "fuel_class": null,
+  "hardware": null,
+  "direct": [
+   "detection"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Eight smoke-generation samples (for example Teflon) with airflow, weight-loss rate and aging duration.",
+  "limitation": "A smoke measurement study, not a suppression or flame-spread test.",
+  "tables": [
+   "PSI-102_Experimental table_SAME.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-102",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SAMER",
+  "psi": "PSI-101",
+  "doi": "10.60555/2np7-jv14",
+  "name": "Smoke and Aerosol Measurement Experiment Reflight (SAME-R)",
+  "family": "Smoke and detection",
+  "fuel_class": null,
+  "hardware": null,
+  "direct": [
+   "detection"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "109 smoke test rows (for example Kapton) with inlet velocity, Rt/R0, duration and aging times.",
+  "limitation": "Smoke and aerosol response only; the summary does not identify detector readings.",
+  "tables": [
+   "PSI-101_Experimental table_SAME-R.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-101",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "DAFT",
+  "psi": "PSI-47",
+  "doi": null,
+  "name": "Dust and Aerosol Measurement Feasibility Test (DAFT / DAFT-2)",
+  "family": "Smoke and detection",
+  "fuel_class": null,
+  "hardware": "Instrument reused from SAME",
+  "direct": [],
+  "indirect": [
+   "detection"
+  ],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Two sessions testing dust measurement instruments (P-Trak and DustTrak) with Arizona road dust.",
+  "limitation": "Instrument feasibility, not combustion.",
+  "tables": [
+   "PSI-47_Experimental table_DAFT.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-47",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "FLAMEDESIGN",
+  "psi": "PSI-10",
+  "doi": "10.60555/w4zy-bt45",
+  "name": "ACME Flame Design",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "CIR, ACME modular hardware",
+  "direct": [
+   "gas-phase"
+  ],
+  "indirect": [
+   "prevention"
+  ],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "327 normal and inverse spherical-flame tests with fuel (ethylene, propane), oxygen fraction, pressure, flows and computed flame temperature.",
+  "limitation": "Tad and Zst are computed values, not measurements. Gas flames are not solid-material evidence. Some normal-flame rows carry RAMP qualifiers.",
+  "tables": [
+   "PSI-10_Experimental table_Flame Design_Normal Flame.csv",
+   "PSI-10_Experimental table_Flame Design_Inverse Flame.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-10",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "CFIG",
+  "psi": "PSI-159",
+  "doi": "10.60555/cyt1-kh64",
+  "name": "ACME Cool Flames Investigation with Gases (CFI-G)",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "CIR, ACME modular hardware",
+  "direct": [
+   "gas-phase"
+  ],
+  "indirect": [
+   "prevention"
+  ],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Cool-flame tests with ethane, propane and butane. Inverse flames reach up to 85% oxygen. Pressure is reported in bar; rows list ignition, burn time and how each flame ended.",
+  "limitation": "Gas-phase cool flames. The TFP flag is not expanded in the source header. Not the same as CFI (droplets).",
+  "tables": [
+   "PSI-159_Experimental table_CFI-G_Normal Flames.csv",
+   "PSI-159_Experimental table_CFI-G_Inverse Flames.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-159",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "BRE",
+  "psi": "PSI-20",
+  "doi": null,
+  "name": "ACME Burning Rate Emulator (BRE)",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "CIR, ACME modular hardware",
+  "direct": [
+   "gas-phase"
+  ],
+  "indirect": [
+   "prevention"
+  ],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Day summaries of ethylene flames at several oxygen concentrations, used to emulate materials flammability in still atmospheres.",
+  "limitation": "Chamber pressure was varied but is not identified in the table.",
+  "tables": [
+   "PSI-20_Experimental table_ACME BRE.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-20",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "CLD",
+  "psi": "PSI-21",
+  "doi": null,
+  "name": "ACME CLD Flame",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "CIR, ACME modular hardware",
+  "direct": [
+   "gas-phase"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Day summaries of methane-based tests with fuel concentration ranges.",
+  "limitation": "No oxygen or pressure values in the table.",
+  "tables": [
+   "PSI-21_Experimental table_CLD Flame.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-21",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "EFIELD",
+  "psi": "PSI-22",
+  "doi": null,
+  "name": "ACME E-FIELD Flames",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "CIR, ACME modular hardware",
+  "direct": [
+   "gas-phase"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Day summaries of electric-field tests with methane flames; the field mimics partial-gravity effects on flame ions.",
+  "limitation": "Not a measured partial-gravity experiment.",
+  "tables": [
+   "PSI-22_Experimental table_ACME E-FIELD Flames.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-22",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SFLAME",
+  "psi": "PSI-23",
+  "doi": null,
+  "name": "ACME s-Flame",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "CIR, ACME modular hardware",
+  "direct": [
+   "gas-phase"
+  ],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "Day summaries of nitrogen-diluted fuel and oxygen tests at about 21% oxygen.",
+  "limitation": "Summary only; the large raw archive was not assessed.",
+  "tables": [
+   "PSI-23_Experimental table_ACME s-Flame.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-23",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SPICE",
+  "psi": "PSI-107",
+  "doi": "10.60555/9kbh-e962",
+  "name": "Smoke Point In Co-flow Experiment (SPICE)",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "MSG, SPICE flow duct",
+  "direct": [],
+  "indirect": [
+   "detection"
+  ],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "469-row log of ethylene flames with nozzle size, fuel rate and air rate.",
+  "limitation": "No smoke-point result column in the public table.",
+  "tables": [
+   "PSI-107_Experimental table_Spice.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-107",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ },
+ {
+  "id": "SLICE",
+  "psi": "PSI-106",
+  "doi": null,
+  "name": "Structure & Liftoff In Combustion Experiment (SLICE)",
+  "family": "Gas-phase combustion",
+  "fuel_class": "gas",
+  "hardware": "MSG, SPICE flow duct",
+  "direct": [],
+  "indirect": [],
+  "gravity": "Microgravity",
+  "suppressant": null,
+  "note": "12-row log of test dates and methane fuel mixtures.",
+  "limitation": "No measured variables in the public table.",
+  "tables": [
+   "PSI-106_Experimental table_Slice.csv"
+  ],
+  "links": [
+   {
+    "label": "NASA PSI record PSI-106",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
+   },
+   {
+    "label": "NASA Combustion Science page",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+   }
+  ]
+ }
+]

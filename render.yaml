@@ -1,0 +1,14 @@
+# Render "Blueprint": New + > Blueprint, pick this repository. Free plan sleeps when idle; the first load can take about a minute.
+services:
+  - type: web
+    name: flarex
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: FLAREX_HOSTED
+        value: "1"

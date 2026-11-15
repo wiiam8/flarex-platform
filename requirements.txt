@@ -1,0 +1,6 @@
+# runtime (also used for deployment)
+fastapi>=0.110
+uvicorn>=0.29
+pandas>=2.0
+numpy>=1.26
+reportlab>=4.0

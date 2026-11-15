@@ -1,0 +1,71 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# Local configuration
+.streamlit/secrets.toml
+*.local
+local_settings.py
+
+# Local AI models
+.ollama/
+ollama_models/
+models/
+*.gguf
+
+# Databases
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# Local uploads and generated data
+uploads/
+storage/
+data/private/
+data/raw/
+
+# Generated PSI output (tracked dataset is in data/psi_tables/)
+/psi_tables/
+/psi_tables.zip
+
+# Dependencies
+node_modules/
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Git
+.git/

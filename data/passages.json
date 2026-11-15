@@ -1,0 +1,80 @@
+[
+ {
+  "id": "FLEX-1",
+  "inv": "FLEX",
+  "text": "FLEX maps flammability boundaries for burning liquid-fuel droplets in reduced gravity and measures how effective gaseous suppressants are across candidate pressures and oxygen levels.",
+  "source": "NASA FLEX fact sheet"
+ },
+ {
+  "id": "FLEX-2",
+  "inv": "FLEX",
+  "text": "FLEX test variables: oxygen mole fraction 0.10 to 0.50, pressure 0.5 to 1.0 atm, carbon dioxide and helium suppressants up to about 0.70 mole fraction, methanol and heptane fuels, droplets of 2 to 5 mm.",
+  "source": "NASA FLEX fact sheet"
+ },
+ {
+  "id": "FLEX-3",
+  "inv": "FLEX",
+  "text": "Low-pressure suppressant data matters because one fire strategy is to isolate a habitat and vent the cabin to space.",
+  "source": "NASA FLEX fact sheet"
+ },
+ {
+  "id": "FLEX-4",
+  "inv": "FLEX",
+  "text": "FLEX-2 studies sub-buoyant convective flow, droplet pairs and bi-component or surrogate fuels, in groups of roughly 30 to 60 tests.",
+  "source": "NASA FLEX fact sheet"
+ },
+ {
+  "id": "BASS-1",
+  "inv": "BASS",
+  "text": "BASS burned 41 solid samples (flat, spheres, candles in tubes) in the Microgravity Science Glovebox using a fan-driven duct with airflow set from 5 to 50 cm/s and nitrogen supplied from 0 to 500 cc/min until extinction.",
+  "source": "NASA BASS fact sheet"
+ },
+ {
+  "id": "BASS-2",
+  "inv": "BASS",
+  "text": "BASS tests whether materials in microgravity with adequate ventilation burn as well as or better than in normal gravity under identical pressure, oxygen and temperature.",
+  "source": "NASA BASS fact sheet"
+ },
+ {
+  "id": "BASS-3",
+  "inv": "BASS",
+  "text": "In microgravity the best point to apply a suppressant may not be obvious, and a stream could make a flame worse by entraining oxygen.",
+  "source": "NASA BASS fact sheet"
+ },
+ {
+  "id": "BASS-4",
+  "inv": "BASS",
+  "text": "BASS-II used 100 samples and varied ambient oxygen, ventilation flow, and fuel type, thickness and geometry; models predicted higher flame spread rates than were observed.",
+  "source": "NASA BASS fact sheet"
+ },
+ {
+  "id": "BASS-5",
+  "inv": "BASS",
+  "text": "NASA screens spacecraft materials with the NASA-STD-6001 Test 1 upward-burning test in normal gravity, which may not capture low-gravity behavior.",
+  "source": "NASA BASS fact sheet"
+ },
+ {
+  "id": "CH-1",
+  "inv": "",
+  "text": "A Moon base or pressurized rover atmosphere is expected to have oxygen of about 30% or more at 10.2 psi or less, which makes materials much more flammable than in Earth air.",
+  "source": "Challenge description"
+ },
+ {
+  "id": "CH-2",
+  "inv": "",
+  "text": "No partial-gravity combustion data is currently in PSI; LUCI and FM2 may add some. Microgravity and normal-gravity results could bound intermediate gravity levels.",
+  "source": "Challenge description"
+ },
+ {
+  "id": "CH-3",
+  "inv": "SAME",
+  "text": "SAME and SAME-R tested smoke detection in microgravity; the DAFT studies reused one of the instruments to detect dust.",
+  "source": "Challenge description"
+ },
+ {
+  "id": "CH-4",
+  "inv": "BASS",
+  "text": "Solid-material flammability was studied in BASS, BASS-II and Saffire; suppression of liquid droplets was studied in FLEX by diluting the atmosphere with carbon dioxide and helium.",
+  "source": "Challenge description"
+ }
+]
