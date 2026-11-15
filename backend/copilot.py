@@ -1,17 +1,18 @@
-
 """
 FLARE-X Research Copilot
-Evidence-grounded scientific assistant powered by a local Ollama model.
+Evidence-grounded scientific assistant powered by a local Ollama model,
+or by a hosted AI (Groq) when the platform runs online.
 
 Design principles:
 - Retrieval first: retrieve evidence before generating an answer.
 - Citations: only allow citations belonging to retrieved evidence.
 - Scientific integrity: never invent experimental conditions or findings.
-- Graceful degradation: works without Ollama through extractive retrieval.
+- Graceful degradation: works without any AI through extractive retrieval.
 - Conversational identity: handles greetings without requiring an LLM.
 """
 
 import json
+import os
 import re
 import urllib.request
 import urllib.error
@@ -56,7 +57,7 @@ def conversational_intent(question):
     """
     Detect simple greetings and identity questions.
 
-    These responses do not require Ollama or scientific retrieval.
+    These responses do not require an AI model or scientific retrieval.
     Actual scientific questions continue through the normal pipeline.
     """
 
@@ -300,6 +301,11 @@ def box_fact(sc):
 # 6. CITATION VALIDATION
 # ============================================================
 
+# A sentence that is only a heading, such as "**Answer**" or
+# "**Limitation**:", is not a factual claim and needs no citation.
+HEADING_ONLY = re.compile(r"[\*#\s]*[A-Za-z ]{1,30}[\*#:\s]*")
+
+
 def validate(text, valid):
     """
     Remove citations that do not belong to retrieved evidence.
@@ -344,6 +350,10 @@ def validate(text, valid):
         if sentence.startswith("#") and len(sentence) < 100:
             continue
 
+        # Ignore heading-only lines such as "**Answer**".
+        if HEADING_ONLY.fullmatch(sentence):
+            continue
+
         if not CITE.search(sentence):
             uncited.append(sentence)
 
@@ -358,7 +368,7 @@ def fallback(hits):
     """
     Return retrieved evidence without using an AI model.
 
-    This allows FLARE-X to remain useful when Ollama is offline.
+    This allows FLARE-X to remain useful when no AI is available.
     """
 
     if not hits:
@@ -409,16 +419,88 @@ def _http(path, body=None, timeout=5):
 
 
 # ============================================================
-# 9. OLLAMA STATUS
+# 9. HOSTED AI (Groq): used only when FLAREX_HOSTED=1
+# ============================================================
+
+# The API key is read from the environment. It must NEVER be written
+# in the code or committed to GitHub.
+GROQ_KEY = os.environ.get("GROQ_API_KEY", "")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+
+
+def cloud_enabled():
+    """True when a hosted AI key has been configured."""
+    return bool(GROQ_KEY)
+
+
+def cloud_llm(model):
+    """
+    Create a callable that sends prompts to the hosted Groq API.
+    """
+
+    def call(system, prompt):
+
+        body = {
+            "model": model or GROQ_MODEL,
+            "temperature": 0.1,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": prompt},
+            ],
+        }
+
+        request = urllib.request.Request(
+            GROQ_URL,
+            data=json.dumps(body).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + GROQ_KEY,
+                "User-Agent": "flarex/1.0",
+            },
+        )
+
+        with urllib.request.urlopen(
+            request,
+            timeout=60,
+        ) as response:
+
+            data = json.loads(response.read().decode("utf-8"))
+
+        content = data["choices"][0]["message"]["content"]
+
+        if not content:
+            raise ValueError(
+                "The hosted AI returned an empty response."
+            )
+
+        return content
+
+    return call
+
+
+# ============================================================
+# 10. AI STATUS
 # ============================================================
 
 def status():
     """
-    Check local Ollama availability.
+    Check which AI is available.
 
-    In hosted mode, local Ollama is deliberately disabled.
-    The hosted server must use a separately configured AI provider.
+    - Hosted with a key: the hosted AI (Groq) is used.
+    - Hosted without a key: no AI (local Ollama is deliberately
+      disabled online, so retrieval-only answers are shown).
+    - Local: Ollama on this computer.
     """
+
+    if HOSTED and cloud_enabled():
+        return {
+            "available": True,
+            "host": "Hosted AI (Groq)",
+            "models": [GROQ_MODEL],
+            "default": GROQ_MODEL,
+            "hosted": True,
+        }
 
     if HOSTED:
         return {
@@ -461,8 +543,9 @@ def status():
             "hosted": False,
         }
 
+
 # ============================================================
-# 10. OLLAMA CHAT FUNCTION
+# 11. OLLAMA CHAT FUNCTION
 # ============================================================
 
 def ollama_llm(model):
@@ -515,7 +598,7 @@ def ollama_llm(model):
 
 
 # ============================================================
-# 11. MAIN ANSWER FUNCTION
+# 12. MAIN ANSWER FUNCTION
 # ============================================================
 
 def answer(question, scenario=None, model=None, llm=None):
@@ -526,7 +609,7 @@ def answer(question, scenario=None, model=None, llm=None):
     1. Handle greetings and identity questions.
     2. Retrieve scientific evidence.
     3. Add scenario-specific evidence when relevant.
-    4. Check Ollama availability.
+    4. Check which AI is available (hosted or Ollama).
     5. Generate an evidence-grounded answer.
     6. Validate citation IDs.
     7. Fall back to extractive retrieval if necessary.
@@ -605,18 +688,25 @@ def answer(question, scenario=None, model=None, llm=None):
     }
 
     # --------------------------------------------------------
-    # D. Check Ollama availability.
+    # D. Check which AI is available.
     # --------------------------------------------------------
 
     if llm is None:
 
-        ollama_status = status()
+        ai_status = status()
 
-        model = model or ollama_status["default"]
+        if ai_status.get("hosted"):
+            # Online: always use the configured hosted model.
+            model = ai_status["default"]
+        else:
+            model = model or ai_status["default"]
 
-        if ollama_status["available"] and model:
+        if ai_status["available"] and model:
 
-            llm = ollama_llm(model)
+            if ai_status.get("hosted"):
+                llm = cloud_llm(model)
+            else:
+                llm = ollama_llm(model)
 
         else:
 
@@ -645,14 +735,15 @@ def answer(question, scenario=None, model=None, llm=None):
     )
 
     prompt = (
-    f"Scenario:\n"
-    f"{json.dumps(scenario or {}, ensure_ascii=False)}\n\n"
-    f"Evidence:\n"
-    f"{packet}\n\n"
-    f"Research question:\n"
-    f"{question}\n\n"
-    f"Provide a concise, evidence-grounded answer."
-)
+        f"Scenario:\n"
+        f"{json.dumps(scenario or {}, ensure_ascii=False)}\n\n"
+        f"Evidence:\n"
+        f"{packet}\n\n"
+        f"Research question:\n"
+        f"{question}\n\n"
+        f"Provide a concise, evidence-grounded answer."
+    )
+
     # --------------------------------------------------------
     # F. Generate the answer.
     # --------------------------------------------------------
@@ -708,10 +799,10 @@ def answer(question, scenario=None, model=None, llm=None):
 
     if not CITE.search(clean_text):
 
-       warnings.append(
-        "The answer contains no evidence citations. "
-        "Treat it as unverified."
-    )
+        warnings.append(
+            "The answer contains no evidence citations. "
+            "Treat it as unverified."
+        )
 
     # --------------------------------------------------------
     # H. Return the final answer and source records.
